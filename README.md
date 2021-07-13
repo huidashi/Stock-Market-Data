@@ -15,3 +15,17 @@ Stocks Involved:
 - Okta (OKTA)
 - Snap (SNAP)
 - Datadog (DDOG)
+
+1. Set up AWS Kinesis data stream and data firehose delivery system.
+2. Create S3 bucket as the data destination for the firehose delivery stream.
+3. Specify buffer conditions on delivery system (5 minutes)
+4. Provision AWS Lambda to transform and stream yahoo finance data
+5. In AWS Lambda, create lambda layer to use yfinance module and other python dependencies
+6. create lambda function (data_transformer.py) to get stock data from yfinance and transform each record to json object, ultimately push data to AWS Kinesis
+      json object {
+                      "high": 53.5, 
+                      "low": 51.61, 
+                      "ts": "2020-05-11 09:30:00-04:00", 
+                      "name": "SNAP"
+                  }
+7. Configure AWS Glue and Athena to query directly from S3 bucket using SQL.

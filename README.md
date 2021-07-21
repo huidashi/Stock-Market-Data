@@ -21,8 +21,8 @@ Stocks Involved:
 3. Specify buffer conditions on delivery system (5 minutes)
 4. Provision AWS Lambda to transform and stream yahoo finance data
 5. In AWS Lambda, create lambda layer to use yfinance module and other python dependencies
-6. create lambda function (data_transformer.py) to get stock data from yfinance and transform each record to json object, ultimately push data to AWS Kinesis
-EXAMPLE OF OBJECT
+6. create lambda function (data_transformer.py) to get stock data from yfinance and transform each record to json object, ultimately push data to AWS Kinesis  
+EXAMPLE OF OBJECT  
       json object {
                       "high": 53.5, 
                       "low": 51.61, 
